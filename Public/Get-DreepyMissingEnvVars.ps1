@@ -1,12 +1,15 @@
 Function Get-DreepyMissingEnvVars {
-
+    [cmdletbinding()]
+    param (
+        [parameter(Mandatory = $true)][string]$patToken
+    )
     Write-Host "Setting Up Azure DevOps CLI..."
     az devops configure -d organization=$env:SYSTEM_TEAMFOUNDATIONCOLLECTIONURI
     az devops configure -d project=$env:SYSTEM_TEAMPROJECT
     az devops configure -l
 
     Write-Host "creating envvar AZURE_DEVOPS_EXT_PAT"
-    Set-Item "env:AZURE_DEVOPS_EXT_PAT" $(patToken)
+    Set-Item "env:AZURE_DEVOPS_EXT_PAT" $patToken
 
     az devops login 
 
