@@ -1,18 +1,11 @@
-$pat = "japu552uunlfswiee4qwyedudfyhi2j7cthfiszqgj54h7facuqq"
-
-$variableGroupName = 'envvars'
-
-$organisation = "https://dev.azure.com/marsanalytics/"
-$project = "PETCARE DATA PLATFORM"#$(System.TeamProject)
-
 Write-Host "Setting Up Azure DevOps CLI..."
 
-az devops configure -d organization=$organisation
-az devops configure -d project=$project
+az devops configure -d organization= $(System.TeamFoundationCollectionUri)
+az devops configure -d project= $(System.TeamProject)
 az devops configure -l
 
 Write-Host "creating envvar AZURE_DEVOPS_EXT_PAT"
-Set-Item "env:AZURE_DEVOPS_EXT_PAT" #$(patToken)
+Set-Item "env:AZURE_DEVOPS_EXT_PAT"
 
 az devops login 
 
