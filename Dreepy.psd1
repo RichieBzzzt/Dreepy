@@ -4,7 +4,7 @@
     RootModule        = 'Dreepy.psm1'
 
     # Version number of this module.
-    ModuleVersion     = '0.0.1'
+    ModuleVersion     = '0.885.0'
 
     # ID used to uniquely identify this module
     GUID              = '0a3d9262-9a87-4eba-a34b-e27686b2b634'
@@ -46,7 +46,9 @@
     # RequiredAssemblies = @('')
 
     # Script files (.ps1) that are run in the caller's environment prior to importing this module.
-    # ScriptsToProcess = @()
+    ScriptsToProcess  = @(
+        'Scripts\dreepy.ps1'
+    )
 
     # Type files (.ps1xml) to be loaded when importing this module
     # TypesToProcess = @()
