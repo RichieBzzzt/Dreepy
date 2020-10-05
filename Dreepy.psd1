@@ -19,7 +19,7 @@
     Copyright         = 'Richie Lee 2020'
 
     # Description of the functionality provided by this module
-    Description       = 'PowerShell module to verify Environment variables exist for all variables in a variable group that are attached to running build.'
+    Description       = 'PowerShell module to verify Environment variables exist for all variables in a variable group that are attached to running build in Azure DevOps.'
 
     # Minimum version of the Windows PowerShell engine required by this module
     PowerShellVersion = '5.1'
@@ -84,7 +84,7 @@
     #PrivateData = @{} # End of PrivateData hashtable
 
     # HelpInfo URI of this module
-    #HelpInfoURI = ''
+    HelpInfoURI = 'https://github.com/RichieBzzzt/Dreepy'
 
     # Default prefix for commands exported from this module. Override the default prefix using Import-Module -Prefix.
     # DefaultCommandPrefix = ''
