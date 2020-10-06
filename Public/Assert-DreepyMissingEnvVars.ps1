@@ -28,11 +28,11 @@ Function Assert-DreepyMissingEnvVars {
         }
         if ($PSBoundParameters.ContainsKey('includePrefix') -eq $true) {
             $prefix = Get-DreepyPrefixFromVariableGroup -variableGroup $variableGroup
-            $DreepyMissingEnvVars.Add("Prefix", $prefix.Value)
+            $DreepyMissingEnvVars.Add("prefix", $prefix.Item('value'))
         }
         if ($PSBoundParameters.ContainsKey('includeSuffix') -eq $true) {
             $suffix = Get-DreepySuffixFromVariableGroup -variableGroup $variableGroup
-            $DreepyMissingEnvVars.Add("Suffix", $suffix.Value)
+            $DreepyMissingEnvVars.Add("suffix", $suffix.Item('value'))
         }
         $missingEnvVars += Get-DreepyMissingEnvVars @DreepyMissingEnvVars 
     }
