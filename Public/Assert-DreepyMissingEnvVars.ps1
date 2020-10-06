@@ -7,19 +7,34 @@ Function Assert-DreepyMissingEnvVars {
         [parameter(Mandatory = $false)][switch]$includeSuffix
     )
 
+
+
+
+    $missingEnvVars = @()
     $buildHash = $buildDefinition | ConvertFrom-Json -AsHashtable
-    $variableGroups = $buildHash.variableGroups 
     if ($PSBoundParameters.ContainsKey('variableGroupNames') -eq $false) {
-        $missingEnvVars = @()
-        foreach ($variableGroup in ($variableGroups)) {
-            $missingEnvVars += Get-DreepyMissingEnvVars -variableGroup $variableGroup 
-        }
+        $variableGroups = $buildHash.variableGroups 
     }
     else {
-        foreach ($variableGroupName in ($variableGroupNames)) { 
-            $variableGroup = $variableGroups | Where-Object {$_.name -eq $variableGroupName}
-            $missingEnvVars += Get-DreepyMissingEnvVars -variableGroup $variableGroup 
+        $variableGroups = @()
+        for ($i = 0; $i -lt $variableGroupNames.length; $i++) {
+            $variableGroup = $buildHash.variableGroups | Where-Object { $_.name -eq $variableGroupNames[$i] } 
+            $variableGroups += $variableGroup  
         }
+    }
+    foreach ($variableGroup in ($variableGroups)) {
+        $DreepyMissingEnvVars = @{
+            variableGroup = $variableGroup
+        }
+        if ($PSBoundParameters.ContainsKey('includePrefix') -eq $true) {
+            $prefix = Get-DreepyPrefixFromVariableGroup -variableGroup $variableGroup
+            $DreepyMissingEnvVars.Add("Prefix", $prefix.Value)
+        }
+        if ($PSBoundParameters.ContainsKey('includeSuffix') -eq $true) {
+            $suffix = Get-DreepySuffixFromVariableGroup -variableGroup $variableGroup
+            $DreepyMissingEnvVars.Add("Suffix", $suffix.Value)
+        }
+        $missingEnvVars += Get-DreepyMissingEnvVars @DreepyMissingEnvVars 
     }
     if ($missingEnvVars.count -gt 0) {
         $body = $missingEnvVars -join [Environment]::NewLine
