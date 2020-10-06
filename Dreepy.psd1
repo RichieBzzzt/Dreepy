@@ -60,7 +60,7 @@
     # NestedModules = @()
 
     # Functions to export from this module
-    FunctionsToExport = 'Get-DreepyMissingEnvVars'
+    FunctionsToExport = 'Get-DreepyMissingEnvVars','Connect-DreepyAzDevOpsCli', 'Get-DreepyBuildDefinition'
 
     # Cmdlets to export from this module
     CmdletsToExport   = '*'
