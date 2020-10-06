@@ -4,7 +4,7 @@
     RootModule        = 'Dreepy.psm1'
 
     # Version number of this module.
-    ModuleVersion     = '0.885.2'
+    ModuleVersion     = '0.885.3'
 
     # ID used to uniquely identify this module
     GUID              = '0a3d9262-9a87-4eba-a34b-e27686b2b634'
@@ -19,7 +19,7 @@
     Copyright         = 'Richie Lee 2020'
 
     # Description of the functionality provided by this module
-    Description       = 'PowerShell module to verify Environment variables exist for all variables in a variable group that are attached to running build in Azure DevOps.'
+    Description       = 'PowerShell module to verify Environment variables exist for all variables in a variable group that are attached to running build in Azure DevOps. See https://github.com/RichieBzzzt/Dreepy/tree/main'
 
     # Minimum version of the Windows PowerShell engine required by this module
     PowerShellVersion = '5.1'
