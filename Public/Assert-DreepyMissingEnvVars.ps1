@@ -3,6 +3,7 @@ Function Assert-DreepyMissingEnvVars {
         [parameter(Mandatory = $false)][PSCustomObject]$buildDefinition,
         [parameter(Mandatory = $false)][string[]]$variableGroupNames,
         [parameter(Mandatory = $false)][ValidateSet('Info', 'Warning', 'Error')][string]$reportingLevel = "Info",
+        [parameter(Mandatory = $false)][switch]$maskedValuesOnly,
         [parameter(Mandatory = $false)][switch]$includePrefix,
         [parameter(Mandatory = $false)][switch]$includeSuffix
     )
@@ -21,12 +22,17 @@ Function Assert-DreepyMissingEnvVars {
             $variableGroup = $buildHash.variableGroups | Where-Object { $_.name -eq $variableGroupNames[$i] } 
             $variableGroups += $variableGroup
         }
-        if ($variableGroups.Count -eq 0){
+        if ($variableGroups.Count -eq 0) {
             Write-Error "No variable groups found!"
             Throw
         }
     }
     foreach ($variableGroup in ($variableGroups)) {
+        if ($PSBoundParameters.ContainsKey('maskedValuesOnly') -eq $true) {
+            $message = "Removing and varaiables from variable group {0} that is not a secret" -f $variableGroup.name
+            Write-Host  $message
+            $variableGroup = Edit-DreepyVariableGroup -variableGroupToEdit $variableGroup
+        }
         $DreepyMissingEnvVars = @{
             variableGroup = $variableGroup
         }
@@ -38,6 +44,7 @@ Function Assert-DreepyMissingEnvVars {
             $suffix = Get-DreepySuffixFromVariableGroup -variableGroup $variableGroup
             $DreepyMissingEnvVars.Add("suffix", $suffix.Item('value'))
         }
+
         $missingEnvVars += Get-DreepyMissingEnvVars @DreepyMissingEnvVars 
     }
     if ($missingEnvVars.count -gt 0) {
