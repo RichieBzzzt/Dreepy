@@ -51,6 +51,13 @@ Env:$var2-domain
 Env:$var3-domain
 ```
 
+And if I used both ```dreepyprefix``` and ```dreepysuffix``` it would find the following environment variables:
+```
+Env:$scope-var1-domain
+Env:$scope-var2-domain
+Env:$scope-var3-domain
+```
+
 ## Why is This Necessary?
 
 For each variable stored in a variable group, all variables have environment variables created for them __with the exception masked variables__. When masked variables are used in a script you have to [create them as environment variables](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/variables?view=azure-devops&tabs=classic%2Cbatch#secret-variables) for them to be accessable in a script. 
@@ -73,3 +80,4 @@ Assert-DreepyMissingEnvVars -buildDefinition $buildDefinition
 ## Any Limitations/Assumptions?
 
 For each task in Azure DevOps, you can check for all variable group, or just one variable group of a build. However you cannot select a subset of variables stored in a variable group.
+You can specify prefix for one variable group, then suffix for anotehr variable group, however you would need to specify the variable group.
