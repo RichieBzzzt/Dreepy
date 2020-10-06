@@ -64,6 +64,9 @@ For each variable stored in a variable group, all variables have environment var
 
 This manual step is a pain to remember, so Dreepy can be run as part of the step that makes use of the variables stored in the variable groups and checks that environment variables have been created.
 
+## I Only Care About Variables with Masked Value...
+
+use the switch ```maskedValuesOnly``` on the cmdlet ```Assert-DreepyMissingEnvVars``` to only check for Environment Variables on variables that are masked. 
 
 ## How Do I Use It?
 You will need to create a [PAT Token](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=preview-page) with the READ Build Scope. Then you can log in using ```Connect-DreepyAzDevOpsCli```. After that you grab the Build Definition of the current build and then check the variable groups.
