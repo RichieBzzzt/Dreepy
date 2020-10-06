@@ -37,14 +37,14 @@ Env:$var2
 Env:$var3
 ```
 
-If I added a variable to the variable group called dreepyprefix and set the value as "scope-" it would find the following environment variables:
+If I added a variable to the variable group called ```dreepyprefix``` and set the value as "scope-" it would find the following environment variables:
 ```
 Env:$scope-var1
 Env:$scope-var2
 Env:$scope-var3
 ```
 
-If I added a variable to the variable group called dreepysuffix and set the value as "-domain" it would find the following environment variables:
+If I added a variable to the variable group called ```dreepysuffix``` and set the value as "-domain" it would find the following environment variables:
 ```
 Env:$var1-domain
 Env:$var2-domain
@@ -72,4 +72,4 @@ Assert-DreepyMissingEnvVars -buildDefinition $buildDefinition
 
 ## Any Limitations/Assumptions?
 
-For each task in Azure DevOps, you can check for all variable group, or just one variable group of a build. However you cannot selecta subset of variables stored in a variable group.
+For each task in Azure DevOps, you can check for all variable group, or just one variable group of a build. However you cannot select a subset of variables stored in a variable group.
