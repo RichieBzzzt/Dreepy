@@ -31,19 +31,25 @@ It can check either all of the Variable Groups that are attached to a build, or 
 Because some environment variables may have been created with a prefix or a suffix you can specify ```includeprefix``` or ```includesuffix```. Add a variable to your variable group called ```dreepyprefix``` or ```dreepysuffix```. The value of this variable is then used to prepend/append to each of the variables in the variable group.
 
 For example, if I have a variable group with three variables that are masked (var1 var2 var3) then I could pass in environment variables named the following and they would be found - 
-var1
-var2
-var3
+```
+Env:$var1
+Env:$var2
+Env:$var3
+```
 
-If I added a variable to the variable group called dreepyprefix and set the value as "scope-" it would find the following
-scope-var1
-scope-var2
-scope-var3
+If I added a variable to the variable group called dreepyprefix and set the value as "scope-" it would find the following environment variables:
+```
+Env:$scope-var1
+Env:$scope-var2
+Env:$scope-var3
+```
 
-If I added a variable to the variable group called dreepysuffix and set the value as "-domain" it would find the following
-var1-domain
-var2-domain
-var3-domain
+If I added a variable to the variable group called dreepysuffix and set the value as "-domain" it would find the following environment variables:
+```
+Env:$var1-domain
+Env:$var2-domain
+Env:$var3-domain
+```
 
 ## Why is This Necessary?
 
