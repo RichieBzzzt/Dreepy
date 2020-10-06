@@ -4,7 +4,7 @@
     RootModule        = 'Dreepy.psm1'
 
     # Version number of this module.
-    ModuleVersion     = '0.885.4'
+    ModuleVersion     = '0.885.5'
 
     # ID used to uniquely identify this module
     GUID              = '0a3d9262-9a87-4eba-a34b-e27686b2b634'
