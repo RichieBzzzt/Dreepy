@@ -1,5 +1,7 @@
 $pat = "japu552uunlfswiee4qwyedudfyhi2j7cthfiszqgj54h7facuqq"
 
+ 'oy2ayowkmfzv7ma7zjxaxdfpbsd2ef2enh5m2targf6iha'
+
 $variableGroupName = 'envvars'
 
 $organisation = "https://dev.azure.com/marsanalytics/"
