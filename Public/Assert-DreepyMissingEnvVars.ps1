@@ -8,28 +8,19 @@ Function Assert-DreepyMissingEnvVars {
         [parameter(Mandatory = $false)][switch]$includeSuffix
     )
 
-
-
-
     $missingEnvVars = @()
-    $buildHash = $buildDefinition | ConvertFrom-Json -AsHashtable
-    if ($PSBoundParameters.ContainsKey('variableGroupNames') -eq $false) {
-        $variableGroups = $buildHash.variableGroups 
+
+    $DreepyVariableGroupsFromBuildDefinition = @{
+        buildDefinition = $buildDefinition
     }
-    else {
-        $variableGroups = @()
-        for ($i = 0; $i -lt $variableGroupNames.length; $i++) {
-            $variableGroup = $buildHash.variableGroups | Where-Object { $_.name -eq $variableGroupNames[$i] } 
-            $variableGroups += $variableGroup
-        }
-        if ($variableGroups.Count -eq 0) {
-            Write-Error "No variable groups found!"
-            Throw
-        }
+    if ($PSBoundParameters.ContainsKey('variableGroupNames') -eq $true) {
+        $DreepyVariableGroupsFromBuildDefinition.Add("variableGroupNames", $variableGroupNames)
     }
+    $variableGroups = Get-DreepyVariableGroupsFromBuildDefinition @DreepyVariableGroupsFromBuildDefinition
+
     foreach ($variableGroup in ($variableGroups)) {
         if ($PSBoundParameters.ContainsKey('maskedValuesOnly') -eq $true) {
-            $message = "Removing and varaiables from variable group {0} that is not a secret" -f $variableGroup.name
+            $message = "Removing any variables from variable group {0} that is not a secret" -f $variableGroup.name
             Write-Host  $message
             $variableGroup = Edit-DreepyVariableGroup -variableGroupToEdit $variableGroup
         }
@@ -52,12 +43,15 @@ Function Assert-DreepyMissingEnvVars {
         $message = "The following secrets do not have environment variables set for them:" + [Environment]::NewLine + $body
         if ($reportingLevel -eq "Info") {
             Write-Host $message
+            $missingEnvVars.count
         }
         elseif ($reportingLevel -eq "Warning") {
             Write-Warning $message
+            $missingEnvVars.count
         }
         elseif ($reportingLevel -eq "Error") {
             Write-Error $message
+            $missingEnvVars.count
             Throw
         }
     }

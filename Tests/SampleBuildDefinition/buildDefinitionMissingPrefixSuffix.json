@@ -1,0 +1,84 @@
+{
+    "name": "ENVVARS-CI",
+   
+    "variableGroups": [
+      {
+        "alias": null,
+        "description": "envvars from vargroup",
+        "id": 95,
+        "name": "envvars",
+        "type": "Vsts",
+        "variables": {
+          "eternatus": {
+            "allowOverride": null,
+            "isSecret": null,
+            "value": "eternamaxEternatus"
+          },
+          "zacian": {
+            "allowOverride": null,
+            "isSecret": true,
+            "value": null
+          },
+          "zamazenta": {
+            "allowOverride": null,
+            "isSecret": true,
+            "value": null
+          }
+        }
+      },
+      {
+        "alias": null,
+        "description": "tests before creating secrets",
+        "id": 90,
+        "name": "z_test_ag",
+        "type": "Vsts",
+        "variables": {
+          "name1": {
+            "allowOverride": null,
+            "isSecret": null,
+            "value": "v1"
+          },
+          "name2": {
+            "allowOverride": null,
+            "isSecret": null,
+            "value": "v2"
+          },
+          "name3": {
+            "allowOverride": null,
+            "isSecret": null,
+            "value": "v3"
+          },
+          "name4": {
+            "allowOverride": null,
+            "isSecret": null,
+            "value": "v4"
+          },
+          "name5": {
+            "allowOverride": null,
+            "isSecret": true,
+            "value": null
+          },
+          "testonline": {
+            "allowOverride": null,
+            "isSecret": true,
+            "value": null
+          },
+          "varname1": {
+            "allowOverride": null,
+            "isSecret": true,
+            "value": null
+          },
+          "varname2": {
+            "allowOverride": null,
+            "isSecret": null,
+            "value": "value2"
+          },
+          "varname3": {
+            "allowOverride": null,
+            "isSecret": true,
+            "value": null
+          }
+        }
+      }
+    ]
+  }

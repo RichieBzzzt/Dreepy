@@ -7,7 +7,7 @@ Function Get-DreepyBuildDefinition{
     $buildDefinitionShow = az pipelines build definition show --name $buildDefinitionName --detect true
 
     if ($null -eq $buildDefinitionShow){
-        Write-Error "Buld not found!"
+        Write-Error "Build not found!"
         Throw
     }
     return $buildDefinitionShow
