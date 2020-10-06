@@ -19,7 +19,11 @@ Function Assert-DreepyMissingEnvVars {
         $variableGroups = @()
         for ($i = 0; $i -lt $variableGroupNames.length; $i++) {
             $variableGroup = $buildHash.variableGroups | Where-Object { $_.name -eq $variableGroupNames[$i] } 
-            $variableGroups += $variableGroup  
+            $variableGroups += $variableGroup
+        }
+        if ($variableGroups.Count -eq 0){
+            Write-Error "No variable groups found!"
+            Throw
         }
     }
     foreach ($variableGroup in ($variableGroups)) {
