@@ -30,7 +30,7 @@ steps:
     inputs:
       targetType: "inline"
       script: /
-        Invoke-ScriptAnalyzer -Path ./
+        Invoke-ScriptAnalyzer -Path "./P*/"
 
       pwsh: true
 

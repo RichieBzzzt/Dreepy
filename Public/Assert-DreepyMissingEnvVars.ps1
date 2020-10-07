@@ -9,7 +9,6 @@ Function Assert-DreepyMissingEnvVars {
     )
 
     $missingEnvVars = @()
-
     $DreepyVariableGroupsFromBuildDefinition = @{
         buildDefinition = $buildDefinition
     }
@@ -36,7 +35,7 @@ Function Assert-DreepyMissingEnvVars {
             $DreepyMissingEnvVars.Add("suffix", $suffix.Item('value'))
         }
 
-        $missingEnvVars += Get-DreepyMissingEnvVars @DreepyMissingEnvVars 
+        $missingEnvVars += Get-DreepyMissingEnvVars @DreepyMissingEnvVars
     }
     if ($missingEnvVars.count -gt 0) {
         $body = $missingEnvVars -join [Environment]::NewLine

@@ -7,7 +7,6 @@ Function Edit-DreepyVariableGroup {
         if ($_.key -notin "dreepyprefix", "dreepysuffix") {
             if ($null -eq $_.Value.isSecret) {
                 $varsToRemove += $_.Key
-            
             }
         }
     }

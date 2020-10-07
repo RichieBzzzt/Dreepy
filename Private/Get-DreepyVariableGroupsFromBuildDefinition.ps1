@@ -6,12 +6,12 @@ Function Get-DreepyVariableGroupsFromBuildDefinition{
 
     $buildHash = $buildDefinition | ConvertFrom-Json -AsHashtable
     if ($PSBoundParameters.ContainsKey('variableGroupNames') -eq $false) {
-        $variableGroups = $buildHash.variableGroups 
+        $variableGroups = $buildHash.variableGroups
     }
     else {
         $variableGroups = @()
         for ($i = 0; $i -lt $variableGroupNames.length; $i++) {
-            $variableGroup = $buildHash.variableGroups | Where-Object { $_.name -eq $variableGroupNames[$i] } 
+            $variableGroup = $buildHash.variableGroups | Where-Object { $_.name -eq $variableGroupNames[$i] }
             $variableGroups += $variableGroup
         }
         if ($variableGroups.Count -eq 0) {

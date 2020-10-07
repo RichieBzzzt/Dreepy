@@ -7,11 +7,11 @@ Function Connect-DreepyAzDevOpsCli {
     )
 
     Write-Verbose "Configuring Azure DevOps CLI..."
-    az devops configure -d organization=$organisationUri 
+    az devops configure -d organization=$organisationUri
     az devops configure -d project=$Project
     az devops configure -l
 
     Write-Host "Logging in to Azure DevOps CLI..."
-    $env:AZURE_DEVOPS_EXT_PAT = $patToken 
-    $env:AZURE_DEVOPS_EXT_PAT | az devops login 
+    $env:AZURE_DEVOPS_EXT_PAT = $patToken
+    $env:AZURE_DEVOPS_EXT_PAT | az devops login
 }
