@@ -13,9 +13,11 @@ pr:
 
 variables:
 - name: baseVersionNumber
-  value: '0.885.'
-- name: VersionNumber
-  value: $(baseVersionNumber).$(BuildID)
+  value: '0.885'
+- name: Minor 
+  value: $[counter(variables['BaseVersionNumber'], 8)]
+- name: VersionNumber 
+  value: $(BaseVersionNumber).$(Minor)
 
 pool:
   vmImage: 'windows-2019'
