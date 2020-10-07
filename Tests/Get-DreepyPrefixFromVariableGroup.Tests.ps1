@@ -1,5 +1,7 @@
 Set-Location $PSScriptRoot
-Import-Module "..\Private\Get-DreepyPrefixFromVariableGroup.ps1" -Force
+Import-Module "..\Private\*.ps1" -Force
+Import-Module "..\Public\*.ps1" -Force
+Import-Module "./Helper/*.ps1" -Force
 
 Describe "Return Prefix" {
     it "Should Return A Prefix Value" {

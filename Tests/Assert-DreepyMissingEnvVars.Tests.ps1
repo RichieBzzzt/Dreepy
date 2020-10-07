@@ -1,5 +1,6 @@
 Set-Location $PSScriptRoot
-Import-Module "..\Dreepy.psd1" -Force
+Import-Module "..\Private\*.ps1" -Force
+Import-Module "..\Public\*.ps1" -Force
 Import-Module "./Helper/*.ps1" -Force
 
 Describe "Run Assert on Both Variable Groups" {

@@ -1,5 +1,7 @@
 Set-Location $PSScriptRoot
-Import-Module "..\Private\Get-DreepyVariableGroupsFromBuildDefinition.ps1" -Force
+Import-Module "..\Private\*.ps1" -Force
+Import-Module "..\Public\*.ps1" -Force
+Import-Module "./Helper/*.ps1" -Force
 
 Describe "Getting Variable Groups from Build Definition" {
     it "Should return two Variable Groups" {

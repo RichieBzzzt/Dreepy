@@ -1,6 +1,7 @@
 Set-Location $PSScriptRoot
-Import-Module "..\Public\Get-DreepyMissingEnvVars.ps1" -Force
-Import-Module "..\Private\Get-DreepyVariableGroupsFromBuildDefinition.ps1" -Force
+Import-Module "..\Private\*.ps1" -Force
+Import-Module "..\Public\*.ps1" -Force
+Import-Module "./Helper/*.ps1" -Force
 
 Describe "Get Missing Environment Vars" {
     it "Should Return Three Missing Variables" {

@@ -1,5 +1,7 @@
 Set-Location $PSScriptRoot
-Import-Module "..\Private\Get-DreepySuffixFromVariableGroup.ps1" -Force
+Import-Module "..\Private\*.ps1" -Force
+Import-Module "..\Public\*.ps1" -Force
+Import-Module "./Helper/*.ps1" -Force
 
 Describe "Return Suffix" {
     it "Should Return A Suffix Value" {
