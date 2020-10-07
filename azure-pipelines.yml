@@ -61,3 +61,13 @@ steps:
     displayName: "Publish Artifact: Dreepy"
     inputs:
       ArtifactName: Dreepy
+
+  - task: richiebzzzt.PublishPackageToPowerShellGallery.Publish-Package-To-PowerShell-Gallery.PublishPackageToPowerShellGallery@0
+    displayName: 'Azure DevOps PowerShell Gallery Packager '
+    inputs:
+      apiKey: '$(apikey)'
+      path: ./Dreepy.psm1
+      setVersionNumberInManifest: true
+      psd1FileName: Dreepy.psd1
+      version: '0.885.$(BuildID)'
+

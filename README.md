@@ -1,6 +1,8 @@
 # Dreepy
 Check that environment variables have been created for any masked variables included in a Variable Group.
 
+[![Build Status](https://bzzztio.visualstudio.com/Dreepy/_apis/build/status/RichieBzzzt.Dreepy?branchName=main)](https://bzzztio.visualstudio.com/Dreepy/_build/latest?definitionId=45&branchName=main)
+
 ## How Does It Work?
 
 Dreepy is a PowerShell module to verify Environment variables exist for all variables in a variable group that are attached to running build.
