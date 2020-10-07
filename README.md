@@ -28,7 +28,7 @@ It can check either all of the Variable Groups that are attached to a build, or 
 
 ## Is There a Naming Convention Expected of Variables?
 
-Because some environment variables may have been created with a prefix or a suffix you can specify ```includeprefix``` or ```includesuffix```. Add a variable to your variable group called ```dreepyprefix``` or ```dreepysuffix```. The value of this variable is then used to prepend/append to each of the variables in the variable group.
+Because some environment variables may have been created with a name different to the variable in the variable group with a prefix or a suffix, you can specify ```includeprefix``` or ```includesuffix```. Add a variable to your variable group called ```dreepyprefix``` or ```dreepysuffix```. The value of this variable is then used to prepend/append to each of the variables in the variable group to check for environment variables.
 
 For example, if I have a variable group with three variables that are masked (var1 var2 var3) then I could pass in environment variables named the following and they would be found - 
 ```
@@ -37,21 +37,21 @@ Env:$var2
 Env:$var3
 ```
 
-If I added a variable to the variable group called ```dreepyprefix``` and set the value as "scope-" it would find the following environment variables:
+If I added a variable to the variable group called ```dreepyprefix``` and set the value as "scope-" it would search for the following environment variables:
 ```
 Env:$scope-var1
 Env:$scope-var2
 Env:$scope-var3
 ```
 
-If I added a variable to the variable group called ```dreepysuffix``` and set the value as "-domain" it would find the following environment variables:
+If I added a variable to the variable group called ```dreepysuffix``` and set the value as "-domain" it would search for the following environment variables:
 ```
 Env:$var1-domain
 Env:$var2-domain
 Env:$var3-domain
 ```
 
-And if I used both ```dreepyprefix``` and ```dreepysuffix``` it would find the following environment variables:
+And if I used both ```dreepyprefix``` and ```dreepysuffix``` it would search for the following environment variables:
 ```
 Env:$scope-var1-domain
 Env:$scope-var2-domain
@@ -64,11 +64,16 @@ For each variable stored in a variable group, all variables have environment var
 
 This manual step is a pain to remember, so Dreepy can be run as part of the step that makes use of the variables stored in the variable groups and checks that environment variables have been created.
 
+## Can You Just Not Create The Environment Variables Programmatically?
+
+Despite much hacking I have not been abel to get the values of the variable groups. So it is still very much a manual process. This includes both YAML and Classic pipelines. Sorry! The effort here was to make sure that when a variable was added to a variable group then the step to add an enviroment variable was not forgotten, as that seems to be the case.
+
 ## I Only Care About Variables with Masked Value...
 
 use the switch ```maskedValuesOnly``` on the cmdlet ```Assert-DreepyMissingEnvVars``` to only check for Environment Variables on variables that are masked. 
 
 ## How Do I Use It?
+
 You will need to create a [PAT Token](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=preview-page) with the READ Build Scope. Then you can log in using ```Connect-DreepyAzDevOpsCli```. After that you grab the Build Definition of the current build and then check the variable groups.
 
 ```powershell
