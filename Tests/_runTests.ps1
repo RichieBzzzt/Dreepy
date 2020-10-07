@@ -3,5 +3,8 @@
 
 Set-Location $PSScriptRoot
 $Edition = $PSVersionTable.PSEdition
-Invoke-Pester -CodeCoverage ../P*/*.ps1 -Script  @{Path = "./*.tests.ps1"; Parameters = @{mode=$Mode}} -OutputFile "TestResults-$Edition.xml" -OutputFormat NUnitXML
+Invoke-Pester -CodeCoverage ../P*/*.ps1 -Script  @{Path = "./*.tests.ps1"; Parameters = @{mode=$Mode}} `
+-OutputFile "TestResults-$Edition.xml" `
+-OutputFormat NUnitXML `
+-CodeCoverageOutputFile "coverage_$Edition.xml"
 Set-Location $PSScriptRoot
