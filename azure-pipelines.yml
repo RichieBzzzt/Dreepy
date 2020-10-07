@@ -42,7 +42,7 @@ steps:
     displayName: 'Publish Tests Coverage'
     inputs:
       codeCoverageTool: 'JaCoCo'
-      summaryFileLocation: '**coverage-*-results.xml'
+      summaryFileLocation: '**/coverage-*-results.xml'
       pathToSources: '$(System.DefaultWorkingDirectory)'
       failIfCoverageEmpty: true
 
