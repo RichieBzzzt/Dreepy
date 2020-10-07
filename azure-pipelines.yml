@@ -12,13 +12,15 @@ pr:
       - main
 
 variables:
-- name: versionNumber
-  value: '0.885.$(BuildID)'
+- name: baseVersionNumber
+  value: '0.885.'
+- name: VersionNumber
+  value: $(baseVersionNumber).$(BuildID)
 
 pool:
   vmImage: 'windows-2019'
 
-name: $(BuildID)
+name: $(VersionNumber)
 
 steps:
   # - task: PowerShell@2
@@ -78,5 +80,5 @@ steps:
       path: $(Build.ArtifactStagingDirectory)\Dreepy\Dreepy.psm1
       setVersionNumberInManifest: true
       psd1FileName: $(Build.ArtifactStagingDirectory)\Dreepy\Dreepy.psd1
-      version: '$(versionNumber)'
+      version: 
 
