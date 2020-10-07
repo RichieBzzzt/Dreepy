@@ -26,15 +26,6 @@ name: Dreepy_$(BuildID)
 
 steps:
   - task: PowerShell@2
-    displayName: "PSScriptAnalyzer"
-    inputs:
-      targetType: "inline"
-      script: |
-        Invoke-ScriptAnalyzer -Path "./P*/"
-
-      pwsh: true
-
-  - task: PowerShell@2
     displayName: "Powershell Pester Tests on Ubuntu Latest"
     inputs:
       targetType: "inline"
