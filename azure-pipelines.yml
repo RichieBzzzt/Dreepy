@@ -80,5 +80,5 @@ steps:
       path: $(Build.ArtifactStagingDirectory)\Dreepy\Dreepy.psm1
       setVersionNumberInManifest: true
       psd1FileName: $(Build.ArtifactStagingDirectory)\Dreepy\Dreepy.psd1
-      version: 
+      version: $(VersionNumber)
 
