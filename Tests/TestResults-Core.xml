@@ -1,63 +1,63 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
-<test-results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="nunit_schema_2.5.xsd" name="Pester" total="18" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2020-10-07" time="12:48:37">
-  <environment machine-name="mimikyu" clr-version="Unknown" platform="Linux" os-version="5.4.0-48-generic" user-domain="" user="richie" cwd="/home/richie/src/repos/Dreepy/Tests" nunit-version="2.5.8.0" />
+<test-results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="nunit_schema_2.5.xsd" name="Pester" total="18" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2020-10-07" time="13:32:30">
+  <environment cwd="/home/richie/src/repos/Dreepy/Tests" platform="Linux" machine-name="mimikyu" user="richie" os-version="5.4.0-48-generic" user-domain="" clr-version="Unknown" nunit-version="2.5.8.0" />
   <culture-info current-culture="en-GB" current-uiculture="en-GB" />
-  <test-suite type="TestFixture" name="Pester" executed="True" result="Success" success="True" time="1.4695" asserts="0" description="Pester">
+  <test-suite type="TestFixture" name="Pester" executed="True" result="Success" success="True" time="1.0477" asserts="0" description="Pester">
     <results>
-      <test-suite type="TestFixture" name="/home/richie/src/repos/Dreepy/Tests/Assert-DreepyMissingEnvVars.Tests.ps1" executed="True" result="Success" success="True" time="0.7994" asserts="0" description="/home/richie/src/repos/Dreepy/Tests/Assert-DreepyMissingEnvVars.Tests.ps1">
+      <test-suite type="TestFixture" name="/home/richie/src/repos/Dreepy/Tests/Assert-DreepyMissingEnvVars.Tests.ps1" executed="True" result="Success" success="True" time="0.7299" asserts="0" description="/home/richie/src/repos/Dreepy/Tests/Assert-DreepyMissingEnvVars.Tests.ps1">
         <results>
-          <test-suite type="TestFixture" name="Run Assert on Both Variable Groups" executed="True" result="Success" success="True" time="0.7465" asserts="0" description="Run Assert on Both Variable Groups">
+          <test-suite type="TestFixture" name="Run Assert on Both Variable Groups" executed="True" result="Success" success="True" time="0.6465" asserts="0" description="Run Assert on Both Variable Groups">
             <results>
-              <test-case description="Get Missing Variables" name="Run Assert on Both Variable Groups.Get Missing Variables" time="0.0715" asserts="0" success="True" result="Success" executed="True" />
-              <test-case description="Create EnvVar and Get Missing Variables" name="Run Assert on Both Variable Groups.Create EnvVar and Get Missing Variables" time="0.0728" asserts="0" success="True" result="Success" executed="True" />
-              <test-case description="Create EnvVar and Get Missing Variables That Are Masked Only" name="Run Assert on Both Variable Groups.Create EnvVar and Get Missing Variables That Are Masked Only" time="0.0858" asserts="0" success="True" result="Success" executed="True" />
-              <test-case description="Get Missing Variables That Are Masked Only" name="Run Assert on Both Variable Groups.Get Missing Variables That Are Masked Only" time="0.0656" asserts="0" success="True" result="Success" executed="True" />
-              <test-case description="Get Missing Variables And Include PreFix" name="Run Assert on Both Variable Groups.Get Missing Variables And Include PreFix" time="0.0521" asserts="0" success="True" result="Success" executed="True" />
-              <test-case description="Get Missing Variables And Include Suffix" name="Run Assert on Both Variable Groups.Get Missing Variables And Include Suffix" time="0.0475" asserts="0" success="True" result="Success" executed="True" />
-              <test-case description="Get Missing Variables And Include Suffix" name="Run Assert on Both Variable Groups.Get Missing Variables And Include Suffix" time="0.0548" asserts="0" success="True" result="Success" executed="True" />
-              <test-case description="Should Raise Warning" name="Run Assert on Both Variable Groups.Should Raise Warning" time="0.0521" asserts="0" success="True" result="Success" executed="True" />
-              <test-case description="Should Throw" name="Run Assert on Both Variable Groups.Should Throw" time="0.1077" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Get Missing Variables" name="Run Assert on Both Variable Groups.Get Missing Variables" time="0.1166" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Create EnvVar and Get Missing Variables" name="Run Assert on Both Variable Groups.Create EnvVar and Get Missing Variables" time="0.0388" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Create EnvVar and Get Missing Variables That Are Masked Only" name="Run Assert on Both Variable Groups.Create EnvVar and Get Missing Variables That Are Masked Only" time="0.0555" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Get Missing Variables That Are Masked Only" name="Run Assert on Both Variable Groups.Get Missing Variables That Are Masked Only" time="0.0289" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Get Missing Variables And Include PreFix" name="Run Assert on Both Variable Groups.Get Missing Variables And Include PreFix" time="0.0331" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Get Missing Variables And Include Suffix" name="Run Assert on Both Variable Groups.Get Missing Variables And Include Suffix" time="0.0203" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Get Missing Variables And Include Suffix" name="Run Assert on Both Variable Groups.Get Missing Variables And Include Suffix" time="0.0216" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should Raise Warning" name="Run Assert on Both Variable Groups.Should Raise Warning" time="0.0234" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should Throw" name="Run Assert on Both Variable Groups.Should Throw" time="0.1259" asserts="0" success="True" result="Success" executed="True" />
             </results>
           </test-suite>
         </results>
       </test-suite>
-      <test-suite type="TestFixture" name="/home/richie/src/repos/Dreepy/Tests/Get-DreepyMissingEnvVars.Tests.ps1" executed="True" result="Success" success="True" time="0.1989" asserts="0" description="/home/richie/src/repos/Dreepy/Tests/Get-DreepyMissingEnvVars.Tests.ps1">
+      <test-suite type="TestFixture" name="/home/richie/src/repos/Dreepy/Tests/Get-DreepyMissingEnvVars.Tests.ps1" executed="True" result="Success" success="True" time="0.0786" asserts="0" description="/home/richie/src/repos/Dreepy/Tests/Get-DreepyMissingEnvVars.Tests.ps1">
         <results>
-          <test-suite type="TestFixture" name="Get Missing Environment Vars" executed="True" result="Success" success="True" time="0.1641" asserts="0" description="Get Missing Environment Vars">
+          <test-suite type="TestFixture" name="Get Missing Environment Vars" executed="True" result="Success" success="True" time="0.0526" asserts="0" description="Get Missing Environment Vars">
             <results>
-              <test-case description="Should Return Three Missing Variables" name="Get Missing Environment Vars.Should Return Three Missing Variables" time="0.0539" asserts="0" success="True" result="Success" executed="True" />
-              <test-case description="Crate EnvVar Should Return Two Missing Variables" name="Get Missing Environment Vars.Crate EnvVar Should Return Two Missing Variables" time="0.0599" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should Return Three Missing Variables" name="Get Missing Environment Vars.Should Return Three Missing Variables" time="0.0123" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Crate EnvVar Should Return Two Missing Variables" name="Get Missing Environment Vars.Crate EnvVar Should Return Two Missing Variables" time="0.0146" asserts="0" success="True" result="Success" executed="True" />
             </results>
           </test-suite>
         </results>
       </test-suite>
-      <test-suite type="TestFixture" name="/home/richie/src/repos/Dreepy/Tests/Get-DreepyPrefixFromVariableGroup.Tests.ps1" executed="True" result="Success" success="True" time="0.1515" asserts="0" description="/home/richie/src/repos/Dreepy/Tests/Get-DreepyPrefixFromVariableGroup.Tests.ps1">
+      <test-suite type="TestFixture" name="/home/richie/src/repos/Dreepy/Tests/Get-DreepyPrefixFromVariableGroup.Tests.ps1" executed="True" result="Success" success="True" time="0.0861" asserts="0" description="/home/richie/src/repos/Dreepy/Tests/Get-DreepyPrefixFromVariableGroup.Tests.ps1">
         <results>
-          <test-suite type="TestFixture" name="Return Prefix" executed="True" result="Success" success="True" time="0.1249" asserts="0" description="Return Prefix">
+          <test-suite type="TestFixture" name="Return Prefix" executed="True" result="Success" success="True" time="0.0692" asserts="0" description="Return Prefix">
             <results>
-              <test-case description="Should Return A Prefix Value" name="Return Prefix.Should Return A Prefix Value" time="0.0263" asserts="0" success="True" result="Success" executed="True" />
-              <test-case description="Should Throw As No Dreepy Prefix" name="Return Prefix.Should Throw As No Dreepy Prefix" time="0.058" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should Return A Prefix Value" name="Return Prefix.Should Return A Prefix Value" time="0.0172" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should Throw As No Dreepy Prefix" name="Return Prefix.Should Throw As No Dreepy Prefix" time="0.0244" asserts="0" success="True" result="Success" executed="True" />
             </results>
           </test-suite>
         </results>
       </test-suite>
-      <test-suite type="TestFixture" name="/home/richie/src/repos/Dreepy/Tests/Get-DreepySuffixFromVariableGroup.Tests.ps1" executed="True" result="Success" success="True" time="0.1494" asserts="0" description="/home/richie/src/repos/Dreepy/Tests/Get-DreepySuffixFromVariableGroup.Tests.ps1">
+      <test-suite type="TestFixture" name="/home/richie/src/repos/Dreepy/Tests/Get-DreepySuffixFromVariableGroup.Tests.ps1" executed="True" result="Success" success="True" time="0.0686" asserts="0" description="/home/richie/src/repos/Dreepy/Tests/Get-DreepySuffixFromVariableGroup.Tests.ps1">
         <results>
-          <test-suite type="TestFixture" name="Return Suffix" executed="True" result="Success" success="True" time="0.1261" asserts="0" description="Return Suffix">
+          <test-suite type="TestFixture" name="Return Suffix" executed="True" result="Success" success="True" time="0.0518" asserts="0" description="Return Suffix">
             <results>
-              <test-case description="Should Return A Suffix Value" name="Return Suffix.Should Return A Suffix Value" time="0.0237" asserts="0" success="True" result="Success" executed="True" />
-              <test-case description="Should Throw As No Dreepy Suffix" name="Return Suffix.Should Throw As No Dreepy Suffix" time="0.0652" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should Return A Suffix Value" name="Return Suffix.Should Return A Suffix Value" time="0.0082" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should Throw As No Dreepy Suffix" name="Return Suffix.Should Throw As No Dreepy Suffix" time="0.0132" asserts="0" success="True" result="Success" executed="True" />
             </results>
           </test-suite>
         </results>
       </test-suite>
-      <test-suite type="TestFixture" name="/home/richie/src/repos/Dreepy/Tests/Get-DreepyVariableGroupsFromBuildDefinition.Tests.ps1" executed="True" result="Success" success="True" time="0.1703" asserts="0" description="/home/richie/src/repos/Dreepy/Tests/Get-DreepyVariableGroupsFromBuildDefinition.Tests.ps1">
+      <test-suite type="TestFixture" name="/home/richie/src/repos/Dreepy/Tests/Get-DreepyVariableGroupsFromBuildDefinition.Tests.ps1" executed="True" result="Success" success="True" time="0.0846" asserts="0" description="/home/richie/src/repos/Dreepy/Tests/Get-DreepyVariableGroupsFromBuildDefinition.Tests.ps1">
         <results>
-          <test-suite type="TestFixture" name="Getting Variable Groups from Build Definition" executed="True" result="Success" success="True" time="0.1448" asserts="0" description="Getting Variable Groups from Build Definition">
+          <test-suite type="TestFixture" name="Getting Variable Groups from Build Definition" executed="True" result="Success" success="True" time="0.0757" asserts="0" description="Getting Variable Groups from Build Definition">
             <results>
-              <test-case description="Should return two Variable Groups" name="Getting Variable Groups from Build Definition.Should return two Variable Groups" time="0.0212" asserts="0" success="True" result="Success" executed="True" />
-              <test-case description="Should return two Variable Groups" name="Getting Variable Groups from Build Definition.Should return two Variable Groups" time="0.024" asserts="0" success="True" result="Success" executed="True" />
-              <test-case description="Should Throw as no VariableGroup Exists" name="Getting Variable Groups from Build Definition.Should Throw as no VariableGroup Exists" time="0.042" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should return two Variable Groups" name="Getting Variable Groups from Build Definition.Should return two Variable Groups" time="0.0076" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should return two Variable Groups" name="Getting Variable Groups from Build Definition.Should return two Variable Groups" time="0.011" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Should Throw as no VariableGroup Exists" name="Getting Variable Groups from Build Definition.Should Throw as no VariableGroup Exists" time="0.0213" asserts="0" success="True" result="Success" executed="True" />
             </results>
           </test-suite>
         </results>

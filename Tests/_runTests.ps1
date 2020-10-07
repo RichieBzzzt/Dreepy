@@ -8,5 +8,3 @@ Invoke-Pester -CodeCoverage ../P*/*.ps1 -Script  @{Path = "./*.tests.ps1"; Param
 -OutputFormat NUnitXML `
 -CodeCoverageOutputFile "coverage_$Edition.xml"
 Set-Location $PSScriptRoot
-
-Get-DreepyVariableGroupsFromBuildDefinition
