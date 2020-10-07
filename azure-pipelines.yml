@@ -50,28 +50,33 @@ steps:
   #     pathToSources: '$(System.DefaultWorkingDirectory)'
   #     failIfCoverageEmpty: true
 
-  # - task: CopyFiles@2
-  #   displayName: "Copy Files to: $(build.artifactstagingdirectory)"
-  #   inputs:
-  #     Contents: |
-  #       Private\**
-  #       Public\**
-  #       Scripts\**
-  #       *.psd1
-  #       *.psm1
-  #     TargetFolder: "$(build.artifactstagingdirectory)"
+  - task: CopyFiles@2
+    displayName: "Copy Files to: $(build.artifactstagingdirectory)"
+    inputs:
+      Contents: |
+        Private\**
+        Public\**
+        Scripts\**
+        *.psd1
+        *.psm1
+      TargetFolder: "$(build.artifactstagingdirectory)"
 
-  # - task: PublishBuildArtifacts@1
-  #   displayName: "Publish Artifact: Dreepy"
-  #   inputs:
-  #     ArtifactName: Dreepy
+  - task: PublishBuildArtifacts@1
+    displayName: "Publish Artifact: Dreepy"
+    inputs:
+      ArtifactName: Dreepy
+
+  - task: DownloadPipelineArtifact@2
+    inputs:
+      artifact: Dreepy
+      path: $(Build.ArtifactStagingDirectory)\Dreepy
 
   - task: richiebzzzt.PublishPackageToPowerShellGallery.Publish-Package-To-PowerShell-Gallery.PublishPackageToPowerShellGallery@0
     displayName: 'Azure DevOps PowerShell Gallery Packager '
     inputs:
       apiKey: '$(apikey)'
-      path: ./Dreepy.psm1
+      path: $(Build.ArtifactStagingDirectory)\Dreepy\Dreepy.psm1
       setVersionNumberInManifest: true
-      psd1FileName: Dreepy.psd1
-      version: '$()versionNumber'
+      psd1FileName: $(Build.ArtifactStagingDirectory)\Dreepy\Dreepy.psd1
+      version: '$(versionNumber)'
 
