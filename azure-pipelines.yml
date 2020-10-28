@@ -20,13 +20,20 @@ variables:
   value: $(BaseVersionNumber).$(Minor)
 
 pool:
-  vmImage: 'windows-2019'
+  vmImage: 'windows-latest'
 
 name: Dreepy_$(BuildID)
 
 steps:
   - task: PowerShell@2
-    displayName: "Powershell Pester Tests on Ubuntu Latest"
+    displayName: "Update Build Number"
+    inputs:
+      targetType: 'inline'
+      script: |
+            $BuildName = $env:BUILD_DEFINITIONNAME +'_'+$env:VERSIONNUMBER +'_'+ $env:BUILD_SOURCEBRANCHNAME 
+            Write-Host "##vso[build.updatebuildnumber]$BuildName"
+  - task: PowerShell@2
+    displayName: "Powershell Pester Tests on Windows Latest"
     inputs:
       targetType: "inline"
       script: |
