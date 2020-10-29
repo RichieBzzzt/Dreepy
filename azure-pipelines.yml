@@ -76,6 +76,7 @@ steps:
       path: $(Build.ArtifactStagingDirectory)\Dreepy
 
   - task: richiebzzzt.PublishPackageToPowerShellGallery.Publish-Package-To-PowerShell-Gallery.PublishPackageToPowerShellGallery@0
+    condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/main'))
     displayName: 'Azure DevOps PowerShell Gallery Packager '
     inputs:
       apiKey: '$(apikey)'
