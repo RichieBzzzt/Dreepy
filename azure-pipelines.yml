@@ -82,13 +82,17 @@ steps:
       artifact: Dreepy
       path: $(Build.ArtifactStagingDirectory)\Dreepy
 
-  - task: richiebzzzt.PublishPackageToPowerShellGallery.Publish-Package-To-PowerShell-Gallery.PublishPackageToPowerShellGallery@0
-    condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/main'))
-    displayName: 'Azure DevOps PowerShell Gallery Packager '
+  - task: PowerShell@2
+    condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
+    displayName: "Publish to PowerShellGallery"
     inputs:
-      apiKey: '$(apikey)'
-      path: $(Build.ArtifactStagingDirectory)\Dreepy
-      setVersionNumberInManifest: true
-      psd1FileName: $(Build.ArtifactStagingDirectory)\Dreepy\Dreepy.psd1
-      version: $(VersionNumber)
+      targetType: "inline"
+      script: |
+        Install-Module Spiny -Scope CurrentUser -SkipPublisherCheck -Force -Verbose
+        Import-Module Spiny -Force -Verbose
+        $moduleNumber = Edit-SPModuleVersionNumber -ModuleVersionNumber $env:VERSIONNUMBER -psd1File $(Build.ArtifactStagingDirectory)/Dreepy/Dreepy.psd1
+        Publish-SPPackageToPowerShellGallery `
+        -apiKey '$(apikey)' `
+        -path $(Build.ArtifactStagingDirectory)/Dreepy
+      pwsh: true
 
