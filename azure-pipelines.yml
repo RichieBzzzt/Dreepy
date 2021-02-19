@@ -20,7 +20,7 @@ variables:
   value: $(BaseVersionNumber).$(Minor)
 
 pool:
-  vmImage: 'windows-latest'
+  vmImage: 'ubuntu-latest'
 
 name: Dreepy_$(BuildID)
 
@@ -65,9 +65,9 @@ steps:
     displayName: "Copy Files to: $(build.artifactstagingdirectory)"
     inputs:
       Contents: |
-        Private\**
-        Public\**
-        Scripts\**
+        Private/**
+        Public/**
+        Scripts/**
         *.psd1
         *.psm1
       TargetFolder: "$(build.artifactstagingdirectory)"
